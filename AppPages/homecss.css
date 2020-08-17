@@ -1,0 +1,110 @@
+html body{
+	padding:0px;
+	margin:0px;
+	font-family:helvetica; 
+}
+.input-field-container{
+    width:100%;
+    border-bottom: 1px solid black;
+    margin-top:110px;
+    
+        background-color: #4E5FBB;
+        margin-top: -8px;
+    
+        height: 158px;
+        width: 100%;
+        border: 1px solid black;
+        border-radius:15px;
+        
+        
+    
+}
+#input-field{
+    width:80%;
+      outline:none;
+      border:none;
+      margin-left: 1%;
+    background-color: #4E5FBB;
+    height: 28%;
+    margin-top: 0.5%;
+    font-size:32px;
+    border-bottom: 1px solid black;
+  
+  }
+
+  ::placeholder{
+color:#dcdcdc;
+
+  }
+  #logo{
+    cursor: pointer;
+  }
+  #btn{
+      cursor:pointer;
+      padding-left:6%;
+      color:white;
+      font-size:40px;
+  }
+  #centre{
+      width:100%;
+  }
+#mytask{
+  font-size: 35px;
+    color: white;
+}
+.bar{
+  color:white;
+  font-size:37px;
+  margin:20px;
+}
+#menu{
+  margin-top:13px;
+  cursor:pointer;
+}
+  .nav li a{
+color:white;
+text-decoration:none;
+}
+.nav li{
+  list-style:none;
+  padding: 16px 0;
+
+}
+.nav{
+  padding:0;
+  margin:0 20px;
+  transition: 0.3s ease;
+  right:300px;
+}
+.nav li a:hover{
+  font-weight: bold;
+
+}
+.navi {
+  height: 28%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:navy;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-radius: 0px 0px 261px 0px;
+}
+#para{
+  margin-left:48%;
+  margin-top: 12%;
+  position: fixed;
+
+}
+::placeholder{
+  font-size:30px;
+}
+@media only screen and (max-width: 640px) and (min-width:360px) {
+
+
+
+
+}

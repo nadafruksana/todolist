@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" href="homecss.css" media="screen">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <script src="homejs.js"></script>
+
+    <div class="input-field-container">
+        <div id="menu1">
+          <i id="logo" onclick="onClickMenu()" class="fas fa-bars bar"></i>  <span id="mytask">My Task</span>
+            <div id="navbar" class="navi">
+                <span style="cursor: pointer;color:white;font-size:27px;margin-left:85%;" class="closebtn" onclick="closeNav()">&times;</span>
+                <ul class="nav">
+                <li><a href="#">My account</a></li>
+                <li><a onclick="out()" href="signin.html">Log out</a></li>
+                
+             </ul> 
+        </div>
+
+    </div>
+<input  onkeydown="enter(event)" id="input-field" type="text" placeholder="Add task..." >  
+<i id="btn" onclick="submit()" class="far fa-paper-plane plane"></i>
+
+
+
+
+</div>
+<div id="para">
+    <i style="font-size: 136px;color: lightgray;" class="far fa-file-alt"></i>
+    
+    <p style="font-size: 38px;color: lightgray;margin-top:1%;">Empty</p>
+    
+    
+    
+</div>
+</body>
+</html>
