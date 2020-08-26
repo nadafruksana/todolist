@@ -1,8 +1,8 @@
 const Task = require('../models/task')
 const tasksController = {}
 tasksController.list= (req,res)=>{
-    Task.find()
-    //Task.find({user: req.user._id})
+    
+    Task.find({user: req.user._id})
     
     .then((tasks)=>{
         res.json(tasks)
@@ -15,8 +15,8 @@ tasksController.list= (req,res)=>{
 tasksController.create=(req,res)=>{
     console.log(req.msg)
     const body = req.body
-    const task = new Task(body)
-   // task.user = req.user._id
+   const task = new Task(body)
+    task.user = req.user._id
     task.save()
     .then((task)=>{
         res.json(task)
@@ -27,8 +27,8 @@ tasksController.create=(req,res)=>{
 }
 tasksController.show=(req,res)=>{
     const id = req.params.id
-   // Task.findOne({_id: id, user: req.user._id})
-    Task.findById(id)
+    Task.findOne({_id: id, user: req.user._id})
+   // Task.findById(id)
     .then((task)=>{
         res.json(task)
     })
@@ -39,8 +39,8 @@ tasksController.show=(req,res)=>{
 
 tasksController.destroy = (req,res)=>{
     const id = req.params.id
-    Task.findByIdAndDelete(id)
-    //Task.findOneAndDelete({ _id:id, user:req.user._id})
+    //Task.findByIdAndDelete(id)
+    Task.findOneAndDelete({ _id:id, user:req.user._id})
     .then((task)=>{
         res.json(task)
     })
@@ -67,5 +67,16 @@ tasksController.completed=(req,res)=>{
         res.json(tasks)
     })
 }
+
+    tasksController.find=(req, res)=> {
+    Task.find({}, function(err, result) {
+        if (err) {
+          res.send(err);
+        } else {
+          res.send(result);
+        }
+      })
+      .limit(3).skip(2);
+  };
 
 module.exports = tasksController
