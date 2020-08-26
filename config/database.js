@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
 
 const configureDB = () => {
-        mongoose.connect('mongodb://localhost:27017/express-app-jan',{
-           useCreateIndex:true,
+    mongoose.connect('mongodb://localhost:27017/user-auths', {       
             useNewUrlParser: true, 
-            useUnifiedTopology: true 
-        })
-        .then(() => {
-            console.log('connected to db')
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}   
+            useUnifiedTopology: true, 
+            useCreateIndex: true
+    })
+    .then(() => {
+        console.log('connected to db')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 module.exports = configureDB
