@@ -1,24 +1,14 @@
 const express = require('express')
-const cors = require('cors')
 const app = express()
-const port = 3033
-
-// setup db
-const configureStore = require('./config/database')
-configureStore()
-
-// enable express to parse json data
-app.use(express.json())
-app.use(cors())
-
-app.use(function(req,res,next){
-    console.log(`${req.ip}- ${req.method} - ${req.url} - ${new Date()} - {JSON.stringify(req.body)}`)
-    next()
-})
-
-// setup routes
+const cors =require('cors')
+const configureDB = require('./config/database')
+configureDB()
 const routes = require('./config/routes')
+const port = 3050
+
+app.use(express.json())
 app.use('/', routes)
+app.use(cors())
 
 app.listen(port, () => {
     console.log('listening on port', port)
